@@ -19,10 +19,10 @@
 // resources to be cached again.
 const CACHE_VERSION = 1;
 var filesToCache = [
-  '/',
-  '/styles/material.indigo-pink.min.css',
-  '/scripts/material.min.js',
-  '/scripts/main.js'
+  './',
+  'styles/material.indigo-pink.min.css',
+  'scripts/material.min.js',
+  'scripts/main.js'
 ];
 const cacheName = 'noise_' + CACHE_VERSION;
 
