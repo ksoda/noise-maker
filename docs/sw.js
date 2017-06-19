@@ -18,8 +18,9 @@
 // Incrementing CACHE_VERSION will kick off the install event and force previously cached
 // resources to be cached again.
 const CACHE_VERSION = 1;
-var filesToCache = [
+const filesToCache = [
   './',
+  'index.html',
   'styles/material.indigo-pink.min.css',
   'scripts/material.min.js',
   'scripts/main.js'
@@ -38,7 +39,9 @@ self.addEventListener('install', function(e) {
 
 self.addEventListener('fetch', function(event) {
   event.respondWith(
-    caches.match(event.request)
+    caches.match(event.request, {
+        ignoreSearch: true
+    })
       .then(function(response) {
         console.log(response)
         if (response) {
